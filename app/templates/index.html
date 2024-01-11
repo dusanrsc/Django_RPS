@@ -14,29 +14,17 @@
 		<div class="container" align="center"></br></br></br>
 
 			<!-- cpu hand -->
-			{% if cpu == 0 %}
-			<img src="{% static 'rock.png' %}"></img></br>
-			{% elif cpu == 1 %}
-			<img src="{% static 'paper.png' %}"></img></br>
-			{% elif cpu == 2 %}
-			<img src="{% static 'scissors.png' %}"></img></br>
-			{% else %}
 			<img src="{% static 'img.png' %}"></img></br>
-			{% endif %}
 
 			</br>
 
 			<!-- winer indicator -->
-			{% if cpu == player %}
 			<img src="{% static 'vst.png' %}"></img></br></br>
-			{% else %}
-			<img src="{% static 'vsp.png' %}"></img></br></br>
-			{% endif %}
 
 			<!-- player hand -->
-			<a href="{% url 'index' %}"><img src="{% static 'rock.png' %}"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="{% url 'index' %}"><img src="{% static 'paper.png' %}"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="{% url 'index' %}"><img src="{% static 'scissors.png' %}"></img></a>
+			<a href="{% url 'rock' %}"><img src="{% static 'rock.png' %}"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="{% url 'paper' %}"><img src="{% static 'paper.png' %}"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="{% url 'scissors' %}"><img src="{% static 'scissors.png' %}"></img></a>
 		</div>
 	</body>
 </html>

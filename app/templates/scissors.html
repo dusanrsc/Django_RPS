@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+		<title>Scissors</title>
+	</head>
+	<body style="background-color:#1f1f1f;">
+		<div class="container" align="center"></br></br></br>
+
+			<!-- cpu hand -->
+			<!-- with cpu logic -->
+			{% if cpu == 0 %}
+			<img src="{% static 'rock.png' %}"></img></br>
+			{% elif cpu == 1 %}
+			<img src="{% static 'paper.png' %}"></img></br>
+			{% elif cpu == 2 %}
+			<img src="{% static 'scissors.png' %}"></img></br>
+			{% endif %}
+
+			</br>
+
+			<!-- winer indicator -->
+			<!-- with winner logic -->
+			<!-- tie logic -->
+			{% if cpu == player %}
+			<img src="{% static 'vst.png' %}"></img></br></br>
+
+			<!-- player win logic -->
+			{% elif cpu == 0 and player == 1 %}
+			<img src="{% static 'vsp.png' %}"></img></br></br>
+			{% elif cpu == 1 and player == 2 %}
+			<img src="{% static 'vsp.png' %}"></img></br></br>
+			{% elif cpu == 2 and player == 0 %}
+			<img src="{% static 'vsp.png' %}"></img></br></br>
+
+			<!-- cpu win logic -->
+			{% elif cpu == 0 and player == 2 %}
+			<img src="{% static 'vsc.png' %}"></img></br></br>
+			{% elif cpu == 1 and player == 0 %}
+			<img src="{% static 'vsc.png' %}"></img></br></br>
+			{% elif cpu == 2 and player == 1 %}
+			<img src="{% static 'vsc.png' %}"></img></br></br>
+			{% endif %}
+
+			<!-- player hand -->
+			<a href="{% url 'rock' %}"><img src="{% static 'rock.png' %}"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="{% url 'paper' %}"><img src="{% static 'paper.png' %}"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="{% url 'scissors' %}"><img src="{% static 'scissors.png' %}"></img></a>
+		</div>
+	</body>
+</html>
